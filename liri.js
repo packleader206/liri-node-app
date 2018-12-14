@@ -25,21 +25,22 @@ const BandsInTown = keys.BandsInTown;
 //variable set up to associate position of user entered command
 let command = process.argv[2];
 
+let artistSongMovie = process.argv.slice(3).join(" ");
 
 
 //Javascript switch statement to determine which command was entered & thus which function to run
 switch(command) {
     case "spotify-this-song":
-        searchSpotify();
+        searchSpotify(artistSongMovie);
         break; 
     case "movie-this":
-        searchOMDB();
+        searchOMDB(artistSongMovie);
         break;
     case "concert-this":
-        searchBIT();
+        searchBIT(artistSongMovie);
         break;
     case "do-what-it-says":
-        searchDWIS(); 
+        searchDWIS(artistSongMovie); 
         break;
 
         default:
@@ -59,66 +60,64 @@ switch(command) {
 };
 
 
-
-
 // Search Spotify function
-function searchSpotify() {
-    let songTitle = process.argv.slice(3).join(" ");
-    if(!songTitle) {
-        songTitle = "Bad to the Bone";
+function searchSpotify(song) {
+    
+    if(!song) {
+        song = "Bad to the Bone";
     }
-    spotifyAPI.search({type: "track", query: songTitle}, function(err, data) {
+    spotifyAPI.search({type: "track", query: song}, function(err, data) {
         if (err) {
             console.log("Error: " + err);
             return
         } else {
-            console.log(songTitle);
+            console.log("--------- Song Details ---------\n");
             console.log("Artist Name: " + data.tracks.items[0].album.artists[0].name);
-            console.log("Song Name: " + " " + songTitle);
+            console.log("Song Name: " + " " + song);
             console.log("Album Name: " + data.tracks.items[0].album.name);
             console.log("URL: " + data.tracks.items[0].album.external_urls.spotify + "\n");
+            console.log("------- End Song Details -------");
             // console.log(data);
-            console.log(data.tracks.items);
+            // console.log(data.tracks.items);
             // console.log(data.tracks.items[0].album.artists[0].name);
         }
     })
 };
 
 // Search OMDB function
-function searchOMDB() {
-    let movieTitle = process.argv.slice(3).join(" ");
-    if(!movieTitle) {
-        movieTitle = "Pulp Fiction";
+function searchOMDB(movie) {
+    
+    if(!movie) {
+        movie = "Pulp Fiction";
     }
-    let queryURL = "http://www.omdbapi.com/?t=" + movieTitle + "&y=&plot=short&apikey=" + OMDB.id;
-    console.log(queryURL);
+    let queryURL = "http://www.omdbapi.com/?t=" + movie + "&y=&plot=short&apikey=" + OMDB.id;
+    // console.log(queryURL);
 
     request(queryURL, function(error, response, body) {
-        console.log(body);
+        // console.log(body);
         if (!error && response.statusCode === 200) {
-          console.log("--------Movie Info-----------" + "\n");
-          console.log("Movie Title: " + JSON.parse(body).Title + "\n");
-          console.log("Release Year: " + JSON.parse(body).Year + "\n");
-          console.log("Rotten Tomato Rating: " + JSON.parse(body).Ratings[1].value + "\n"); 
-          console.log("Country: " + JSON.parse(body).Country + "\n");
-          console.log("Language: " + JSON.parse(body).Language + "\n");
-          console.log("Plot: " + JSON.parse(body).Plot + "\n"); 
-          console.log("Actors: " + JSON.parse(body).Actors + "\n");
-          console.log("--------End Of Movie Info-----------" + "\n");
+          console.log("--------Movie Info-----------");
+          console.log("Movie Title: " + JSON.parse(body).Title);
+          console.log("Release Year: " + JSON.parse(body).Year);
+          console.log("Rotten Tomato Rating: " + JSON.parse(body).Ratings[1].value); 
+          console.log("Country: " + JSON.parse(body).Country);
+          console.log("Language: " + JSON.parse(body).Language);
+          console.log("Plot: " + JSON.parse(body).Plot); 
+          console.log("Actors: " + JSON.parse(body).Actors);
+          console.log("--------End Of Movie Info-----------");
         } else {
           console.log("Error :" + error);
           return;
         }
       });
-}
+};
 
 //search BandsInTown function
-function searchBIT() {
-    let bandName = process.argv.slice(3).join(" ");
-    if(!bandName) {
-        bandName = "Phish";
+function searchBIT(artist) {
+    if(!artist) {
+        artist = "Tenacious D";
     }
-    let queryURL = "https://rest.bandsintown.com/artists/" + bandName + "/events?app_id=" + BandsInTown.id;
+    let queryURL = "https://rest.bandsintown.com/artists/" + artist + "/events?app_id=" + BandsInTown.id;
     console.log(queryURL);
 
     request(queryURL, function(error, response, body) {
@@ -130,7 +129,7 @@ function searchBIT() {
                 let time = moment(body[i].datetime).format("MM/DD/YYYY");
 
                 console.log("----------Concert Info----------");
-                console.log("Artist: " + bandName);
+                console.log("Artist: " + artist);
                 console.log("Venue: " + body[i].venue.name); 
                 console.log("Location: " + body[i].venue.city + ", " + body[i].venue.region + ", " + body[i].venue.country);
                 console.log("Date: " + time);
@@ -142,15 +141,31 @@ function searchBIT() {
         }
 
     });
+};
 
+function searchDWIS() {
+
+    fs.readFile("random.txt", "utf8", function(error, data) {
+        console.log(data);
+        if (!error) {
+            var dwis = data.split(", ")
+            var command1 = dwis[0]
+            console.log(command1);
+            var param = dwis[1]
+            console.log(param);
+            switch (command1) {
+                case "spotify-this-song":
+                    searchSpotify(param);
+                    break;
+                case "movie-this":                    
+                    searchOMDB(param);
+                    break;
+                case "concert-this":                   
+                    searchBIT(param);
+                    break;
+            }
+        } else {
+            console.log("Error: " + error)
+        }
+    });
 }
-
-
-
-
-
-
-
-
-
-
