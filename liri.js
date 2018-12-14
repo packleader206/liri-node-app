@@ -67,7 +67,7 @@ switch(command) {
 
 // Search Spotify function
 function searchSpotify(song) {
-    // Checks to see if user entered a song (argv[3]), if no song entered, lookup song, "Bad to the Bone"
+    // Checks to see if user entered a song (argv[3]), if no song entered, use song, "Bad to the Bone"
     if(!song) {
         song = "Bad to the Bone";
     }
@@ -89,7 +89,7 @@ function searchSpotify(song) {
 
 // Search OMDB function
 function searchOMDB(movie) {
-    // Checks to see if user entered a movie (argv[3]), if no movie entered, lookup movie, "Pulp Fiction"
+    // Checks to see if user entered a movie (argv[3]), if no movie entered, use movie, "Pulp Fiction"
     if(!movie) {
         movie = "Pulp Fiction";
     }
@@ -116,7 +116,7 @@ function searchOMDB(movie) {
 
 //search BandsInTown function
 function searchBIT(artist) {
-    // Checks to see if user entered a artist (argv[3]), if no artist entered, lookup artist, "Tenacious D"
+    // Checks to see if user entered a artist (argv[3]), if no artist entered, use artist, "Tenacious D"
     if(!artist) {
         artist = "Tenacious D";
     }
