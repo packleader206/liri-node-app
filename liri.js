@@ -49,7 +49,7 @@ switch(command) {
         default:
         console.log(
           "\r\n" +
-            "The Node Liri.js App allows you to search for a song, movie, or artist concert information using Node." +
+            "Liri.js is a simple command line Node app that allows you to search for a song, movie, or artist concert information." +
             "\r\n" +
             "To use, simply type 'node liri.js' followed by one of the following:" +
             "\r\n" +
