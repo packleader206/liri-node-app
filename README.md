@@ -43,9 +43,9 @@ To use, simply type "node liri.js" followed by one of the following:
  
  ### Example - "do-what-it-says" - determines what runs based on pre-defined data in the random.txt file.
  
- <img src="https://packleader206.github.io/liri-node-app/images/DWIS1.jpg" alt="do-what-it-says Screenshot1">
+ <img src="https://packleader206.github.io/liri-node-app/images/DWIS2.jpg" alt="do-what-it-says Screenshot1">
  
- ### Example - "do-what-it-says" - query/returned data changes when data/query parameters change in random.txt file.
+ ### Example - "do-what-it-says" - query parameters change when the data in the random.txt file changes.
  
- <img src="https://packleader206.github.io/liri-node-app/images/DWIS2.jpg" alt="do-what-it-says Screenshot2">
+ <img src="https://packleader206.github.io/liri-node-app/images/DWIS1.jpg" alt="do-what-it-says Screenshot2">
             
