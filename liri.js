@@ -1,6 +1,6 @@
 //Liri.js
 
-//required nmp packages & files
+//required cdm packages & files
 require("dotenv").config();
 
 let keys = require("./keys");
