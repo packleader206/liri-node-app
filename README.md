@@ -29,7 +29,7 @@ To use, simply type "node liri.js" followed by one of the following:
             
             4. do-what-it-says
             
- #### Example - Search Song using Spotify API
+ ## Example - Search Song using Spotify API
  
- <img src="https://packleader206.github.io/liri-node-app/images/spotifyCrop.jpg" alt="spotify-this-song Screenshot">
+ <img src="https://packleader206.github.io/liri-node-app/images/spotify1.jpg" alt="spotify-this-song Screenshot">
             
