@@ -2,7 +2,7 @@
 
 ## Overview:
 
-Liri.js is a simple command line Node app that allows the user to search for a song, movie, or artist concert information.  The app utilizes information retrieved from multiple API's using NPM Request.  
+Liri.js is a simple command line Node app that allows the user to search for a song, movie, or artist concert information.
 
 ## Technologies Used:
 - Javascript
@@ -10,6 +10,8 @@ Liri.js is a simple command line Node app that allows the user to search for a s
 - NPM Moment
 - NPM File-System
 - NPM Node-Spotify-API
+- OMDB API
+- Bands in Town API
 - dotenv
 
 ## Author:
@@ -41,7 +43,7 @@ To use, simply type "node liri.js" followed by one of the following:
  
  <img src="https://packleader206.github.io/liri-node-app/images/concert1.jpg" alt="concert-this Screenshot">
  
- #### Example - "do-what-it-says" - what runs is based on pre-defined data in the random.txt file.
+ #### Example - "do-what-it-says" - query is based on pre-defined data in the random.txt file.
  
  <img src="https://packleader206.github.io/liri-node-app/images/DWIS2.jpg" alt="do-what-it-says Screenshot1">
  
