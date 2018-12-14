@@ -29,5 +29,5 @@ To use, simply type "node liri.js" followed by one of the following:
             
             4. do-what-it-says
             
- <bold>Example - Search Song using Spotify API</bold>
+ #### Example - Search Song using Spotify API
             
