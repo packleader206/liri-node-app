@@ -19,13 +19,15 @@ Liri.js is a simple command line Node app that allows the user to search for a s
 
 ## Instructions:
 
-To use, simply type 'node liri.js' followed by one of the following:
+To use, simply type "node liri.js" followed by one of the following:
  
-            1. spotify-this-song 'any song name'
+            1. spotify-this-song "any song name"
             
-            2. movie-this 'any movie name'
+            2. movie-this "any movie name"
             
-            3. concert-this 'any artist name'
+            3. concert-this "any artist name"
             
             4. do-what-it-says
+            
+ <bold>Example - Search Song using Spotify API</bold>
             
