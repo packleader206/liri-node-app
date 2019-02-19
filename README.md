@@ -19,7 +19,18 @@ Liri.js is a simple command line Node app that allows the user to search for a s
 <strong>Al Young</strong>
 <hr>
 
-## Instructions:
+## Setup:
+Open up your command prompt and type the following:
+
+           1. git clone https://github.com/packleader206/liri-node-app.git ENTER
+           
+           2. cd liri-node-app ENTER
+           
+           3. npm install ENTER
+ 
+ You are now ready to run the app!
+
+## Running the App:
 
 To use, simply type "node liri.js" followed by one of the following:
  
