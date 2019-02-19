@@ -20,7 +20,9 @@ Liri.js is a simple command line Node app that allows the user to search for a s
 <hr>
 
 ## Setup:
-Open up your command prompt and type the following:
+To run this application, you will need <a href="https://nodejs.org/en/download/">Node JS</a> installed on your computer.
+
+Once Node JS has been installed on your computer, open up your command prompt and type the following:
 
            1. git clone https://github.com/packleader206/liri-node-app.git ENTER
            
